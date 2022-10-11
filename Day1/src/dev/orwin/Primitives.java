@@ -64,12 +64,15 @@ public class Primitives {
         // The reason you have to re-define the reference variable to change a string, is because of memory
         // Strings are very special in memory and they are part of the reason that Java can be more memory efficient when doing big computations
         // Strings dont have a standardized place in memoery
+        // Unless you do String testString = new String(); which forces it to have a new spot in memory
         // Strings reside in the string pools, which is memory made up of "unused memory"
         // The String pool will gather up all your allocated but unused memory, and actually use it. So that things dont go to waste
 
 
         // The mutable form of String is StringBuilder and StringBuffer
         String dog = "doggo"; // vvvvvvvvv
+        dog.concat("s");//This does NOT change the string
+        dog = dog.concat("s");//  This DOES chance the string
         String cat = "doggo"; //These point to the exact same spot in memory
         StringBuilder doggo = new StringBuilder("doggo"); //  vvvvvvvvvvvvvvvvvv
         StringBuilder catto = new StringBuilder("doggo"); //These point to different spaces in memory

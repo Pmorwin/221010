@@ -19,7 +19,7 @@
         - For instance, if you create a for loop in a method, any variables created in that for loop are "below the line of sight" of the method
 
        ```java 
-        Class Dog{
+        public class Dog{
             String Color = "blue";// This is instance scoped
             static String species = "canine"; // This is static scoped
 
@@ -39,16 +39,16 @@
             // potato isn't visible here
 
         }
-
         ```
 
 ## Class/Object/Constructor Relationship
-    - Classes are the blueprints to your Objects
-    - Objects are the embodiment of the class
-        - A tangible representation of the class
-        - There are lots of dogs, but only 1 buster
-    - Constructors **ACTUALLY** create the object
-        - We can customize our construtors to meet our needs
-        - All classes have a no-args automaticall
-        - If you create another constructor, you will have to manually add the no-args, because it is deleted
-        
+- Classes are the blueprints to your Objects
+- Objects are the embodiment of the class
+    - A tangible representation of the class
+    - There are lots of dogs, but only 1 buster
+- Constructors **ACTUALLY** create the object
+    - We can customize our construtors to meet our needs
+    - All classes have a no-args automaticall
+    - If you create another constructor, you will have to manually add the no-args, because it is deleted
+    - Constructors can **ONLY** deal with variables that exist in the class itself
+    

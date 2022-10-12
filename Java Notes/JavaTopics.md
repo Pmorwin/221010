@@ -1,3 +1,50 @@
+## Java Classes
+- The best way I can think to describe one is as a blueprint or template for an object
+- Classes contain variables (fields) and behaviors (methods)
+    - Fields are variables that store information about the class
+    - Methods are blocks of code that represent some action that our class can take
+        - Other languages refer to these as functions, but in Java, we say Method
+- You can think of the variables like the attirubutes of a class and the methods as what it can do
+- Fields and methods together are know as memebers
+- Best practice for naming your classes is using upper-case CamelCase
+    -Eg. ThisIsMyClass
+- A class can extend another through using the "extends" keyword
+    - Classes can **ONLY** entend 1 other class
+
+## Java Objects
+- Objects are an "instance" of a class
+    - Objects are houses as classes are to blueprints. 
+    - Class = Blueprint, Object = House
+- Objects are created using the class in its initial state
+    - Unless you use a constructor to alter the inital state of the object
+
+## Constrctors
+- Constructors are a special type of method that initialize (create) objects
+- Specifically it assigns values to an objects variables
+- Every class will have a constructor on creation (no-args)
+    - The complier will automatically add a default "no-args" in your class for you if you dont add one yourself
+    - **BUT** if you add/provide your own constructor, the complier will eleminate the deafult no-args. So you will manually need to add it
+- **Super** is a keyword used in constructors
+    - This refers 
+- **this** is a keyword
+    - **this** will either assign a vlaue, or call another constructor when used
+        - If you call another constructor, this is considered Constructor chaining
+    - The first line of any constructor is super() (wether you put it there or not), if its not there the complier will add it for you
+
+
+
+
+## Class/Object/Constructor Relationship
+- Classes are the blueprints to your Objects
+- Objects are the embodiment of the class
+    - A tangible representation of the class
+    - There are lots of dogs, but only 1 buster
+- Constructors **ACTUALLY** create the object
+    - We can customize our construtors to meet our needs
+    - All classes have a no-args automaticall
+    - If you create another constructor, you will have to manually add the no-args, because it is deleted
+    - Constructors can **ONLY** deal with variables that exist in the class itself
+    
 ## Variable Scope
 - Variable scope define where a variable can be seen/accessed in the code
 - There are 4 variable scopes in Java
@@ -40,15 +87,3 @@
 
         }
         ```
-
-## Class/Object/Constructor Relationship
-- Classes are the blueprints to your Objects
-- Objects are the embodiment of the class
-    - A tangible representation of the class
-    - There are lots of dogs, but only 1 buster
-- Constructors **ACTUALLY** create the object
-    - We can customize our construtors to meet our needs
-    - All classes have a no-args automaticall
-    - If you create another constructor, you will have to manually add the no-args, because it is deleted
-    - Constructors can **ONLY** deal with variables that exist in the class itself
-    

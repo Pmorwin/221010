@@ -1,0 +1,5 @@
+- Make a class
+- Make objects for that class
+    - One made with the no args
+    - One made with the all args
+    - One made with no args but changed with setters

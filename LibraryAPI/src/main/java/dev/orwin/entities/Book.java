@@ -25,7 +25,7 @@ public class Book {
         this.author = author;
         this.returnDate = returnDate;
     }
-  
+
     @Override
     public String toString() {
         return "Book{" +

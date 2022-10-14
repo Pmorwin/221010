@@ -132,3 +132,13 @@
 ## Constructors 
 - Constructors are a special type of method are are used specifically to create Objects
 - They assign values to the objects variables, based on the arguemnts they recieve
+
+## Java Methods
+- Define the behaviors of a class/object
+    - They are what your class/object can do
+- Methods can be thought of as a block of code that can used multiple times (repeatable block of code)
+- Often you use Methods to manipulate date in some way or to move data between layers of your code
+- Method are conventionally named using lower-case camelCase
+    - Eg. thisIsMyMethod();
+- Anatomy of a method:
+    - [Acess Modifier] [Non-Access Modifier (optional)] [Return Type] [Name] (parameters/arguments){}

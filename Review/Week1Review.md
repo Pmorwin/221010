@@ -367,3 +367,8 @@ b.setThing("Hi"); // can only store strings
     - package only
   - **private**
     - same class only
+
+- **Maven**
+    - Dependency Manager
+    - Uses pom.xml file to configure and add in external libraries for your application
+    - You can get dependencies from the Maven Prpository 

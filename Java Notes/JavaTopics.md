@@ -87,3 +87,48 @@
 
         }
         ```
+
+## Access Modifers
+- Methods AND Variables are declared with access modifers. These access modifiers determine where in our code, they can be "viewed".
+- There are 4 access modifiers that you need to be keenly aware of, 3 of them you we use very often, 1 you have already been using
+    - Public : Visable Everywhere
+    - Protected : Visable to anything within the package (folder) AND any children of things from that package, even if they arent in the same package.
+        - If my Dog class is in package A, and its variables are protected, I CAN use them in package B **IF** I inherit the Dog class
+    - (default) : Visable to anything within the package (folder)
+        - If my Dog class is in package A, and its variables are default, I CANNOT use them in package B, even if I inherit the Dog class    
+    - Private : Only availible within the specific class it is created in
+
+
+## Non-access Modifers
+- Methods are able to have non-access modifers, that are NOT required to be added. You declare them in the method signature and it comes right after your access modifer.
+    - Static: This makes makes the member it belongs to apart of the class as opposed to being apart of the object
+        ```java
+        public class Game{
+            public static void test(){
+
+            }
+            public void play(){
+
+            }
+        }
+        public class Driver{
+            public static void main(String[] args){
+                test();//To call static methods, you just write the name of the method
+                
+                
+                Game game = new Game(); // You only need to create this for non-static methods
+                game.play();//To call non-static methods, you need to create and use an object of that class
+
+            }
+        }
+        ```
+    - Final: Very self explanitory, methods and variables with this non-access modifer cannote be changed
+        - Variables are unable to be reassigned
+        - Classes cannot be inherited
+        - Methods cannot be overridden
+    - Abstract: This is when you concrete methods from a class, to make it easier to impliment that class in different situations. It is very similar to an interface
+        - This is TECHNICALLY only for the sake of convience 
+    
+## Constructors 
+- Constructors are a special type of method are are used specifically to create Objects
+- They assign values to the objects variables, based on the arguemnts they recieve

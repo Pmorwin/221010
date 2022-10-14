@@ -23,10 +23,12 @@ public class Playground {
         simba.setDiet("Grubs");
         simba.setTeeth(true);
         simba.setEyes(14);
+        simba.legs = 123;
+
 
         System.out.println("This is buster, he is a good boy: " + buster); //What will happen if I print this out?
 
-        System.out.println("My dog buster is " + buster.color + " and he has " + buster.eyes + " eyes!");
+        System.out.println("My dog buster is " + buster + " and he has " + buster.eyes + " eyes!");
 
         System.out.println("This is pepper they are evil: " + pepper);
 

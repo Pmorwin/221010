@@ -3,12 +3,12 @@ package dev.orwin;
 import java.util.Objects;
 
 public class Dog extends Animal{
-    int legs = 4;
-    String color = "brown";
+    private String color = "brown";
     boolean warmBlooded = true;
     String diet = "human food";
     boolean teeth = false;
     int eyes = 8;
+    boolean goodBoy = true; //This is NOT inherited from out parent class
 
     //This is my fantastic no-args constructor
     public Dog() {

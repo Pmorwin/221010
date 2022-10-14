@@ -2,7 +2,7 @@ package dev.orwin;
 
 public class Animal {
 
-    int legs;
+    int legs = 8;
     String color;
     boolean warmBlooded;
     String diet;

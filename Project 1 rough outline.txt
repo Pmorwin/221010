@@ -1,0 +1,35 @@
+
+employees -- Create a base employee class
+	name
+	l name
+	address
+	password
+	username
+	id
+	isAdmin = true/flase
+
+
+
+The only inheritance that you guys will be doing for the most part, will be inheriting methods from interfaces, which we will use today
+
+
+
+JAVALIN - Recieves a login request
+- Passes it to the service layer
+
+Service Layer - Recieves from Javalin
+- Passes it to the repository layer
+
+Repository Layer - Uses the information to access the database
+-It either gets back a user or doesnt
+-Sends that information back to the service layer
+
+Service layer - Performs "Buisness Logic"
+-If it doesnt get back a user, login fail
+-If it does get back a user, it runs it through some layer of identification checking (usually an if statement)
+    --if(isAdmin){
+	do this; Send a 202 Status code
+	}
+	else{
+	do that; Send a 201 Status code
+	}

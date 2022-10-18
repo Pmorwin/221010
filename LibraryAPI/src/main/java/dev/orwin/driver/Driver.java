@@ -1,5 +1,6 @@
 package dev.orwin.driver;
 
+import dev.orwin.controllers.BookController;
 import dev.orwin.handlers.*;
 import dev.orwin.repositories.BookDAO;
 import dev.orwin.repositories.BookDAOLocal;
@@ -12,20 +13,22 @@ public class Driver {
         Javalin app = Javalin.create();
 
         HelloHandler helloHandler = new HelloHandler();
-        GetBookByIdHandler getBookByIdHandler = new GetBookByIdHandler();
-        CreateBookHandler createBookHandler = new CreateBookHandler();
-        UpdateBookHandler updateBookHandler = new UpdateBookHandler();
-        DeleteBookHandler deleteBookHandler = new DeleteBookHandler();
+//        GetBookByIdHandler getBookByIdHandler = new GetBookByIdHandler();
+//        CreateBookHandler createBookHandler = new CreateBookHandler();
+//        UpdateBookHandler updateBookHandler = new UpdateBookHandler();
+//        DeleteBookHandler deleteBookHandler = new DeleteBookHandler();
+        BookController bookController = new BookController();
+
 
         app.get("/hello", helloHandler);
 
-        app.get("/books/{id}", getBookByIdHandler);
+        app.get("/books/{id}", bookController.getBookByIdHandler);
 
-        app.post("/books", createBookHandler);
+        app.post("/books", bookController.createBook);
 
-        app.put("/books", updateBookHandler);
+        app.put("/books", bookController.updateBookHandler);
 
-        app.delete("/books/{id}", deleteBookHandler);
+        app.delete("/books/{id}", bookController.deleteBookHandler);
 
 
 

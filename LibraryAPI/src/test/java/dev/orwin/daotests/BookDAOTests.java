@@ -3,12 +3,13 @@ package dev.orwin.daotests;
 import dev.orwin.entities.Book;
 import dev.orwin.repositories.BookDAO;
 import dev.orwin.repositories.BookDAOLocal;
+import dev.orwin.repositories.BookDAOPostgres;
 import org.junit.jupiter.api.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BookDAOTests {
 
-    static BookDAO bookDAO = new BookDAOLocal();
+    static BookDAO bookDAO = new BookDAOPostgres();
 
     // this is kabob case, tests are written in kabob case
     @Test

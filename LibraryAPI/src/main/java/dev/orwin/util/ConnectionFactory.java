@@ -26,7 +26,7 @@ public class ConnectionFactory {
         String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=practice";
         //                                         ^ port  ^database               ^ schema
         // Something to keep in mind in regards to your postgres database and schema, DONT USE SPACES OR Slashes or UNDERSCORES or Capitals
-        //Your Postgres user name
+        //Your Postgres username
         String username = "postgres";
         //your Postgres password
         String password = "password";

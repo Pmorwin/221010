@@ -9,7 +9,7 @@ public class DeleteBookHandler implements Handler {
     @Override
     public void handle(@NotNull Context ctx) throws Exception {
         int id = Integer.parseInt(ctx.pathParam("id"));
-        boolean result = Driver.bookDAO.deleteBookById(id);
+        boolean result = Driver.bookService.deleteBookById(id);
         if(result){
             ctx.status(204);
         }

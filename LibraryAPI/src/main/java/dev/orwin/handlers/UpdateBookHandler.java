@@ -13,7 +13,7 @@ public class UpdateBookHandler implements Handler {
         String bookJSON = ctx.body();
         Gson gson = new Gson();
         Book book = gson.fromJson(bookJSON, Book.class);
-        Book updateBook = Driver.bookDAO.updateBook(book);
+        Book updateBook = Driver.bookService.updateBook(book);
         String json = gson.toJson(updateBook);
         ctx.result(json);
     }

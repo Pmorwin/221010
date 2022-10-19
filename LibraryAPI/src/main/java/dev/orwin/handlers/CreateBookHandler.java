@@ -13,7 +13,7 @@ public class CreateBookHandler implements Handler {
         String json = ctx.body();
         Gson gson = new Gson();
         Book book = gson.fromJson(json, Book.class);
-        Book registeredBook = Driver.bookDAO.createBook(book);
+        Book registeredBook = Driver.bookService.createBook(book);
         String bookJson = gson.toJson(registeredBook);
         ctx.status(201); //This is a status code that will tell us how things went
         ctx.result(bookJson);

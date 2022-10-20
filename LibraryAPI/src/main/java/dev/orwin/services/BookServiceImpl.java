@@ -2,6 +2,7 @@ package dev.orwin.services;
 
 
 import dev.orwin.entities.Book;
+import dev.orwin.exceptions.InvalidAuthorException;
 import dev.orwin.repositories.BookDAO;
 import dev.orwin.repositories.BookDAOLocal;
 
@@ -33,7 +34,7 @@ public class BookServiceImpl implements BookService {
             throw new RuntimeException("Book's title cannot be empty");
         }
         if(book.getAuthor().length() == 0){
-            throw new RuntimeException("Book's authors cannot be empty");
+            throw new InvalidAuthorException("Book's authors cannot be empty");
         }
         Book savedBook = this.bookDAO.createBook(book);
         return savedBook;

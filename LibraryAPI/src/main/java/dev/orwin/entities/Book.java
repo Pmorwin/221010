@@ -7,6 +7,14 @@ public class Book {
     private String title; //For strings the default value is "" (an empty string)
     private String author;
     private long returnDate; //We will cheat and combine this with "isCheckedOut" by making 0 == isNotCheckedOut
+    private Status status; //this can now ONLY be 1 of 3 values (PENDING, APPROVED, DENIED)
+    // You DO NOT HAVE to use Enums, but I think they are cool, and you should give them a shot
+    // Not much changes with these, except for in the DAO, instead of JUST being able to do
+    // book.getStatus(), you need to do book.getStatus().name()
+    // and with get requests, instead of being able to do rs.getString("status")
+    // You need to do book.valueOf(rs.get(String("status"))
+
+
 
 
     // Everything below here is what is called Boiler plate code

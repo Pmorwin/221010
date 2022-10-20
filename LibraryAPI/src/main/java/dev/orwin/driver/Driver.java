@@ -29,6 +29,8 @@ public class Driver {
 
         app.get("/books/{id}", bookController.getBookByIdHandler);
 
+        app.get("/books", bookController.getAllBooks);
+
         app.post("/books", bookController.createBook);
 
         app.put("/books", bookController.updateBookHandler);

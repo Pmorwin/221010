@@ -5,6 +5,8 @@ import dev.orwin.driver.Driver;
 import dev.orwin.entities.Book;
 import io.javalin.http.Handler;
 
+import java.util.List;
+
 public class BookController {
     // These controllers and using what is called Lambdas
     public Handler createBook = (ctx) ->{
@@ -23,6 +25,13 @@ public class BookController {
         Gson gson = new Gson();
         String json = gson.toJson(book);
         ctx.result(json);
+    };
+
+    public Handler getAllBooks = (ctx) ->{
+      List<Book> books = Driver.bookService.getAllBooks();
+      Gson gson = new Gson();
+      String json = gson.toJson(books);
+      ctx.result(json);
     };
 
     public Handler updateBookHandler = (ctx) ->{

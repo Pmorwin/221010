@@ -4,6 +4,7 @@ import dev.orwin.entities.Book;
 import dev.orwin.util.ConnectionFactory;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -21,6 +22,7 @@ public class BookDAOPostgres implements BookDAO{
             String sql = "insert into books values(default, ?, ? , ?)";
             // The only thing in the sql String that isnt "just a string" are the question marks
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            // We use Return generated Keys, to get back the primary key of our newly created book
             //Parameters START at 1, they are not indexed at 0
             preparedStatement.setString(1, book.getTitle());
             preparedStatement.setString(2,book.getAuthor());
@@ -71,16 +73,67 @@ public class BookDAOPostgres implements BookDAO{
 
     @Override
     public List<Book> getAllBooks() {
-        return null;
+        try(Connection connection = ConnectionFactory.getConnection()){
+            String sql = "select * from books";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            List<Book> bookList = new ArrayList();
+
+            while(rs.next()){
+                Book book = new Book();
+                book.setId(rs.getInt("id"));
+                book.setTitle(rs.getString("title"));
+                book.setAuthor(rs.getString("author"));
+                book.setReturnDate(rs.getLong("returnDate"));
+                bookList.add(book);
+            }
+            return bookList;
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
     public Book updateBook(Book book) {
-        return null;
+        try(Connection connection = ConnectionFactory.getConnection()){
+            String sql = "update books set title = ?, author = ?, returnDate = ? where id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, book.getTitle());
+            preparedStatement.setString(2,book.getAuthor());
+            preparedStatement.setLong(3,book.getReturnDate());
+            preparedStatement.setInt(4,book.getId());
+
+            preparedStatement.executeUpdate();
+            return book;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+
     }
+
 
     @Override
     public boolean deleteBookById(int id) {
-        return false;
+        try(Connection connection = ConnectionFactory.getConnection()){
+            String sql = "delete from books where id =?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setInt(1,id);
+
+            preparedStatement.execute();
+            return true;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
     }
 }

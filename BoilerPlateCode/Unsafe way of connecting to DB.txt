@@ -22,4 +22,8 @@
         String password = "password";
 
         //this is what actually returns our Connection Object (note how this method has a return type of connection)
-        return DriverManager.getConnection(url, username, password);
+         try {
+            return DriverManager.getConnection(url, username, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }

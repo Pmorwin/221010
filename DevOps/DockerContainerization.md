@@ -66,6 +66,7 @@
 
 - Step 6
     - Create a Dockerfile
+    - It **MUST** be named "Dockerfile"
         - Right click your project and make a new file
         - Name the file "Dockerfile" exactly like this
         - Open the Dockerfile and put this as its contents: 

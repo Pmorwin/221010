@@ -1,0 +1,16 @@
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\handlers\DeleteBookHandler.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\handlers\GetBookByIdHandler.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\controllers\BookController.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\handlers\HelloHandler.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\entities\Status.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\services\BookService.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\repositories\BookDAOPostgres.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\handlers\CreateBookHandler.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\handlers\UpdateBookHandler.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\repositories\BookDAO.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\util\ConnectionFactory.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\services\BookServiceImpl.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\driver\Driver.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\entities\Book.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\exceptions\InvalidAuthorException.java
+C:\Users\PatrickOrwin\Documents\Batch 221010\221010\LibraryAPI\src\main\java\dev\orwin\repositories\BookDAOLocal.java

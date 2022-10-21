@@ -45,7 +45,7 @@
         ```
 
 - Step 4
-    - Change your connection factor to this:
+    - Change your ConnectionFactory to this:
     ``` 
     String url = System.getenv("POSTGRES_SQL_DB");
         String username = System.getenv("DB_USERNAME");

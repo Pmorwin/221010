@@ -7,7 +7,7 @@
     - We need to create a containerized PostgresSQL DB in our network. This is super easy!
     - Use: **docker run --name postgre_container -p 5433:5432 -e POSTGRES_PASSWORD=password --network (network-name) -d postgres**
     - This will create a new DB that we can connect through on DBeaver through port 5433
-        - Check that this worked
+        - Check that this worked with DBeaver
         - If it did, create your schema and tables
     - If that worked, we can move on to containerizing our project
 
@@ -47,14 +47,14 @@
 - Step 4
     - Change your connection factor to this:
     ``` 
-    String url = "jdbc:postgresql://postgre_container:5432/postgres?currentSchema=practice";
-        String username = "postgres";
-        String password = "password";
+    String url = System.getenv("POSTGRES_SQL_DB");
+        String username = System.getenv("DB_USERNAME");
+        String password = System.getenv("PASSWORD");
         try {
             return DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } 
+        }
 
 - Step 5
     - Click Maven
@@ -87,6 +87,6 @@
 
 - Step 8
     - Created the container for our application
-    - Use: **docker run -itd --name api_container -p 8888:8080 --network (network-name) (name of image)**
+    - Use: **docker run -itd --name api_container -p 8888:8080 -e POSTGRES_SQL_DB=jdbc:postgresql://postgre_container:5432/postgres?currentSchema=practice -e DB_USERNAME=postgres -e PASSWORD=password --network (network-name) (name of image)**
 
 - With this, you should be able to call to 8888(or whatever port you decide to use) in postman.

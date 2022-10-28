@@ -4,13 +4,42 @@ import dev.orwin.entities.Book;
 import dev.orwin.repositories.BookDAO;
 import dev.orwin.repositories.BookDAOLocal;
 import dev.orwin.repositories.BookDAOPostgres;
+import dev.orwin.util.ConnectionFactory;
 import org.junit.jupiter.api.*;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BookDAOTests {
 
     static BookDAO bookDAO = new BookDAOPostgres();
 
+    @BeforeAll
+    static void setup(){
+        try(Connection connection = ConnectionFactory.getConnection()){
+            String sql = "drop table if exists book";
+            Statement statement = connection.createStatement();
+            statement.execute(sql);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        try(Connection connection = ConnectionFactory.getConnection()){
+            String sql = "create table book(\n" +
+                    "\t id serial primary key,\n" +
+                    "\t title varchar(40) not null,\n" +
+                    "\t author varchar(40) not null,\n" +
+                    "\t returnDate int default 0\n" +
+                    ");";
+            Statement statement = connection.createStatement();
+            statement.execute(sql);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
     // this is kabob case, tests are written in kabob case
     @Test
     @Order(1)
@@ -41,6 +70,30 @@ public class BookDAOTests {
     void delete_book_by_id_test(){
         boolean result = bookDAO.deleteBookById(1);
         Assertions.assertTrue(result);
+    }
+    @AfterAll
+    static void teardown(){
+        try(Connection connection = ConnectionFactory.getConnection()){
+            String sql = "drop table if exists book";
+            Statement statement = connection.createStatement();
+            statement.execute(sql);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        try(Connection connection = ConnectionFactory.getConnection()){
+            String sql = "create table book(\n" +
+                    "\t id serial primary key,\n" +
+                    "\t title varchar(40) not null,\n" +
+                    "\t author varchar(40) not null,\n" +
+                    "\t returnDate int default 0\n" +
+                    ");";
+            Statement statement = connection.createStatement();
+            statement.execute(sql);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
     }
 
 }

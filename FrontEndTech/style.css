@@ -1,0 +1,47 @@
+h3{color: darkmagenta;}
+
+/** CSS classes allow to more easily and generically apply CSS */
+th.killer{
+    color: blueviolet;
+}
+
+tbody.killer{
+    color: darkgreen;
+}
+
+.nerf{
+    text-align: center;
+}
+.nerf table{
+    margin-left: auto;
+    margin-right: auto;
+}
+.killer{
+    border: 1px solid black;
+}
+
+.intro{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.best {
+    text-align: center;
+}
+.best ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.best li {
+    padding: 2px 5px;
+    border: 1px solid black;
+}
+
+.pic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

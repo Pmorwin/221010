@@ -83,12 +83,12 @@
          ENTRYPOINT [ "java", "-jar", "target/(Name of the Jar file with dependencies)" ]
 
 - Step 7
-    - Open CMD in the file the project is located in and create the docker imagine.
+    - Open CMD in the folder the project is located in and create the docker image.
     - Use: **docker build . -t (name of image)**
-    - This will create a docker image that we can view on docker
+    - This will create a docker image that we can view on docker desktop.
 
 - Step 8
-    - Created the container for our application
+    - Create the container for our application.
     - Use: **docker run -itd --name api_container -p 8888:8080 -e POSTGRES_SQL_DB=jdbc:postgresql://postgre_container:5432/postgres?currentSchema=practice -e DB_USERNAME=postgres -e PASSWORD=password --network (network-name) (name of image)**
 
 - With this, you should be able to call to 8888(or whatever port you decide to use) in postman.

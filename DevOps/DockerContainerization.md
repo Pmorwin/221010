@@ -6,6 +6,7 @@
 - Step 2
     - We need to create a containerized PostgresSQL DB in our network. This is super easy!
     - Use: **docker run --name postgre_container -p 5433:5432 -e POSTGRES_PASSWORD=password --network (network-name) -d postgres**
+        - The first port number "5433" is the only one that can be changed. If you installed postgreSQL on your system on 5433, just use 5434 or w/e the next avaliable port is.
     - This will create a new DB that we can connect through on DBeaver through port 5433
         - Check that this worked with DBeaver
         - If it did, create your schema and tables

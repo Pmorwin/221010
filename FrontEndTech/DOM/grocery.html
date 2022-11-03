@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Grocery List</h2>
+
+    <input type="text" name="" id="input">
+    <button id="button">Add Grocery</button>
+
+    <h4>Groceries</h4>
+    <ul id="list">
+
+
+    </ul>
+
+</body>
+<script>
+    const input = document.getElementById("input");
+    const button = document.getElementById("button");
+    const list = document.getElementById("list");
+
+    //We need something to actually hold our groceries
+    const groceries = [];
+    // const doesnt mean we are stuck with an empty array, in this context, const means you are stuck with "an" array
+    // as long as we dont try to make groceries NOT an array, we can manipulate the array all we want
+    
+
+    button.addEventListener("click", function(event){
+        const grocery = input.value;
+
+        for(const g of groceries){
+            if(g === grocery){
+                alert('This grocery is already on the list')
+                return;
+            }    
+        }
+
+
+        groceries.push(grocery);
+
+        const li = document.createElement('li');
+        li.innerText = grocery;
+        list.appendChild(li);
+        console.log(groceries);
+
+    })
+
+
+
+</script>
+
+</html>

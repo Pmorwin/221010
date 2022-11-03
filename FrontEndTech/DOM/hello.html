@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    
+    <button id="button">Hey how are you?</button>
+
+</body>
+<script>
+    // first step in our DOM manipulation, is we need to grab an element from the DOM
+    const helloButton = document.getElementById("button")
+
+
+    // the 1st arugment is the event that it will listen for on that element
+    // the 2nd arugment is a CALLBACK function that will handle that event
+    // Callback functions are functions used as arugments in other funcations
+    // This is very similar to Javalin, the first arugemnt is what it listens for, the second is what happens
+    helloButton.addEventListener("click",function(event){
+        alert("Hello everyone!")
+    })
+
+
+
+</script>
+</html>

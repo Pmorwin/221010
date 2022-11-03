@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nameInput" type="text">
+    <button id="button">Greet</button>
+
+    <p id="nameParam"></p>
+
+</body>
+<script>
+    const nameInput = document.getElementById("nameInput");
+    const button = document.getElementById("button");
+    const nameParam = document.getElementById("nameParam");
+
+    button.addEventListener("click", function(event){
+        const name = nameInput.value // this will grab whatever value is in our input when we click the button
+
+        alert(`Greetings ${name} how are you?`);
+        //This wont work the way I want, because I am only changing the innerText
+        //nameParam.innerText = `Great to see you <b>${name}</b>`;
+        // innerHTML is covient and great for when you want to do fun things that innerText wont allow
+        nameParam.innerHTML = `Great to see you <b>${name}</b>`;
+        // That being said, innerHTML does pose a security risk in the of Corss Site Scripting 
+
+
+
+
+    })
+
+
+
+
+</script>
+</html>

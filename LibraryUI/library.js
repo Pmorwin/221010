@@ -3,7 +3,7 @@ const url = "http://localhost:8080"; //putting our base URL in a variable for cl
 
 //I like to add all my event listeners at the top
 document.getElementById("getBooksButton").onclick = getBooks; //this button will GET all books
-
+document.getElementById("submitBookButton").onclick = submitBook; //this button will POST a new book
 
 
 //I like to add all my functinos at the bottom--------------------------------
@@ -55,14 +55,47 @@ async function getBooks(){
             cell4.innerHTML = book.returnDate;
             row.appendChild(cell4)
 
-
             //finally, we need to actually APPEND THE ROW to the table body
             //a new row will be appended FOR EVERY BOOK that got returned in the fetch
             document.getElementById("booksBody").appendChild(row);
         }
 
+    } 
+
+}//end of get all books function
+
+
+//This function will take in user input, and create a book object to send in a POST request
+async function submitBook(){
+
+    //gather the user's input from the submit book input boxes
+    //when the submit button is clicked, these variables will be populated
+    let titleInput = document.getElementById("title").value; //we can gather inputs with .value 
+    let authorInput = document.getElementById("author").value;
+
+    //now we have the inputs, but we need to put them in an object to send in the fetch 
+    let newBook = {
+        id: 0, //this will be changed by the DAO
+        title: titleInput,
+        author: authorInput,
+        returnDate: 0 //this will be changed when the book is returned
+    } //NOTE: the variable names MUST match the variable names in your API.
+
+    //now that we have a Book object, we're ready to send a POST request
+
+    //any fetch request besides GET requires a few more parameters
+        //It will include: URL, and a config object 
+    let response = await fetch(url + "/books",{
+        method: "POST", //send a POST requests (would be GET if we didn't specify)
+        body: JSON.stringify(newBook) //turn the newBook into JSON, and send it in the request body
+    });
+
+    //log the response just so we can see what comes back
+    console.log(response)
+
+    //popup to tell the user their new book was created
+    if(response.status === 201){
+        alert("Book Created: " + titleInput + " by " + authorInput)
     }
 
-
-
-}
+} //end of submit book function

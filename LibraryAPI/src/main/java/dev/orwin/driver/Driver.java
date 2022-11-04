@@ -15,7 +15,14 @@ public class Driver {
     // If you make a static object of your Service, you can use this single instance throughout your application
     public static BookService bookService = new BookServiceImpl(new BookDAOPostgres());
     public static void main(String[] args) {
-        Javalin app = Javalin.create();
+        Javalin app = Javalin.create(
+
+                //config lambda - lets us specify certain configurations for our Javalin app
+                config -> {
+                    config.enableCorsForAllOrigins(); //lets us process HTTP requests from anywhere
+                }
+                //may not need to do this if you've containerized? Patrick may know lol
+        );
 
         HelloHandler helloHandler = new HelloHandler();
 //        GetBookByIdHandler getBookByIdHandler = new GetBookByIdHandler();

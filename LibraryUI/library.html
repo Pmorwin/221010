@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+<!-- THIS <link> IS BOOTSTRAP. With bootstrap, we can use classes that style our elements for us. -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+crossorigin="anonymous">
+</head>
+
+<body>
+
+<!-- This div will contain and format all of our bootstrapped elements (class="container") -->
+<div class="container">
+
+    <h3>Welcome to the Library! shhhh......</h3>
+
+    <!-- class="row" makes this a bootstrap row. takes a block for itself. -->
+    <div id="table-row" class="row">
+        <!-- This table was styled with bootstrap!! in the class attribute -->
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Return Date</th>
+                </tr>
+            </thead>
+            <tbody id="booksBody">
+                <!--We'll leave this blank for now - it will be filled after our fetch request in JS-->
+            </tbody>
+        </table>
+    </div>
+
+    <button id="getBooksButton" class="btn btn-success">Show Books</button>
+    <!--This bootstrap button will call the JS function that fetches all books from the server-->
+
+    <br><br>
+
+    <!-- This div holds all of the inputs for submitting a new Book -->
+    <div id="insert-row" class="row col-sm-3"> 
+        <!-- col-sm-x is how we size things with bootstrap-->
+        <!-- 12 is the full length of the row, 6 is half the block, 3 is a quarter and so on-->
+
+        <h5>Submit a New Book:</h5>
+
+        <input type="text" id="title" placeholder="Book Title">
+        <input type="text" id="author" placeholder="Author Name">
+        <button id="submitBookButton" class="btn btn-primary col-sm-4">Submit</button>
+        <!-- This button will submit a book. it's going to be 1/3 of the length of the div it's in-->
+
+    </div>
+
+
+
+</div> <!-- BOOTSTRAP CONTAINER ENDS HERE -->
+
+    <!--externally linking our JS file-->
+    <script src="library.js"></script>
+</body>
+</html>

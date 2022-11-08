@@ -7,9 +7,10 @@ import { Component } from "@angular/core";
 
         <input type="text" placeholder="Enter your items" [(ngModel)] ="grocery">
         <button (click)="addGrocery()">Add</button>
+        
 
         <ul *ngIf="isListVisible">
-            <li *ngFor="let g of groceries"> {{g}} </li>
+            <li *ngFor="let g of groceries"> {{g}} <counter></counter></li>
         </ul>
 
         <button (click)="toggleList()">Toggle List</button>

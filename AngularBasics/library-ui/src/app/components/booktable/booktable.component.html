@@ -1,0 +1,36 @@
+<h3>Books Availible</h3>
+
+
+<h4 *ngIf="books.length ===0">Loading Books</h4>
+
+<table *ngIf="books.length !== 0">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ReturnDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr>
+            <td>101</td>
+            <td>Game of Thrones</td>
+            <td>George RR Martin</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>202</td>
+            <td>Fahrenheit 451</td>
+            <td>Ray Bradberry</td>
+            <td>0</td>
+        </tr> -->
+        <tr *ngFor="let b of books">
+            <td>{{b.id}}</td>
+            <td>{{b.title}}</td>
+            <td>{{b.author}}</td>
+            <td>{{b.returnDate}}</td>
+        </tr>
+
+    </tbody>
+</table>

@@ -30,3 +30,29 @@
     - *Loose Coupling*
         Architecture where classes are not hard codeded to each other
 - Beans can be 100% mangaed by the IoC container and is a one stop shop for your configuration
+
+## Spring Boot
+- ***Spring Boot IS NOT SPRING***
+- Spring Boot is a VERY OPIONATED environement of spring
+    - It will handle a lot of the low level configuration and boilerplate for you automatically
+- Spring Boot is NOT a module of Spring
+    - We **USE** Spring boot initializer but that does not make it spring or a spring module
+- **application.properties**
+    - The main file for configuration in a Spring Boot App
+        - Database connection options
+        - Logging options 
+        - Debug configuration
+        - Port to run on
+
+## Modules of Spring
+- Spring is expandable and customizable by design
+- There are ton of modules that provide very specific functionality
+- **Spring Data**
+    - This is for your data layer of an application
+    - Allows you to very easily map Entites to Tables
+    - Create DAOS(Spring calls them Repos) that interact with those tables
+- **Spring Web**
+    - This is for the API layers of our application
+    - This is an abstracted version of Javalin
+    - Handle HTTP requests and make HTTP responses
+    - JSON serialization, exception handling, and error code throwing

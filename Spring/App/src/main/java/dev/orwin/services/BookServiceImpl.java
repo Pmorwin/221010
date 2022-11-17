@@ -3,6 +3,8 @@ package dev.orwin.services;
 import dev.orwin.entities.Book;
 import dev.orwin.exceptions.BookNotFoundException;
 import dev.orwin.repos.BookRepo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import java.util.Optional;
 @Service // This tell Spring boot that this class is a service within your application
 public class BookServiceImpl implements BookService{
 
+
+    Logger logger = LogManager.getLogger(BookServiceImpl.class);
     @Autowired
     BookRepo bookRepo;
 
@@ -28,6 +32,7 @@ public class BookServiceImpl implements BookService{
             return possibleBook.get();
         }
         else{
+            this.logger.error("A Book could not be found with id: " +id);
             throw new BookNotFoundException(); // If this exception is not caught and a controller method throws it,
             // then the status code associated with the exception is returned
         }

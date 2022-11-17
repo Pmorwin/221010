@@ -6,11 +6,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
+@Transactional // Or you can put it on top of the Class and this will apply to everything
 public class BookRepoTests {
 
     @Autowired // Spring will check the Application Context to see if there is a bean that satisfies this dependency
@@ -19,8 +21,11 @@ public class BookRepoTests {
     BookRepo bookRepo;
 
     @Test
+    @Transactional //This will have any CRUD operation not be persisted in the database
+    // Transactions: Nothing is persisted until EVERYTHING executes properly
+    // You can either put it on top of each test your would like to be Transactional
     public void create_book(){
-        Book book = new Book(0,"Hungy Gamer","Hungry People",0);
+        Book book = new Book(0,"Transactional Test","Shouldn't be saved in the database",0);
         Book savedBook = this.bookRepo.save(book);
         System.out.println(savedBook);
         Assertions.assertNotEquals(0,savedBook.getId());
@@ -28,7 +33,7 @@ public class BookRepoTests {
 
     @Test
     public void get_book(){
-        Book book = this.bookRepo.findById(4).get();// The reason we have to do .get() is because find return an Optional
+        Book book = this.bookRepo.findById(3).get();// The reason we have to do .get() is because find return an Optional
         System.out.println(book);
         Assertions.assertNotNull(book.getId());
     }

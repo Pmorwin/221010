@@ -56,3 +56,9 @@
     - This is an abstracted version of Javalin
     - Handle HTTP requests and make HTTP responses
     - JSON serialization, exception handling, and error code throwing
+- **Spring Actuator**
+    - Adds a lot of dev-friendly routes to your application
+    - See configuration info while your app is running
+    - Monitor important mertrics
+    - Shut it down with a specific path
+    - Something only for development, it should be disabled when going production

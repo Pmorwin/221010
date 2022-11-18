@@ -62,3 +62,16 @@
     - Monitor important mertrics
     - Shut it down with a specific path
     - Something only for development, it should be disabled when going production
+
+## Spring AOP
+- Asepct Oriented Programming
+    - Another Paradigm of programming
+- **CCC**
+    - Cross Cutting Coerns
+    - Features of an application that cannot be addressed by a single layer
+        - Secturity, logging
+- **Aspects**
+    - A class that can execute **Advice** methods throughout an application
+    - Advice executes based on a **PointCut** expression
+
+

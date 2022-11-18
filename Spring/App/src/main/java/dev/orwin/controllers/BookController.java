@@ -15,7 +15,7 @@ import java.util.List;
 @Controller // This stereotype annotation is saying that this class is used for defining routes for web apps
 public class BookController {
 
-    Logger logger = LogManager.getLogger(BookController.class); // Create a logger instance
+//    Logger logger = LogManager.getLogger(BookController.class); // Create a logger instance
 
 
     @Autowired
@@ -24,8 +24,8 @@ public class BookController {
     @GetMapping("/books")
     @ResponseBody // This will automatically convert the return into a JSON object
     public List<Book> getAllBooks(@RequestParam(required = false) String title){
-        logger.info("Request to GET /books");
-
+//        logger.info("Request to GET /books");
+//        We are going to replace this with an aspect
 
         if(title == null){
             return bookService.getAllBooks();
